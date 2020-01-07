@@ -2,36 +2,36 @@ package main
 
 import (
 	"fmt"
-	"sync"
 )
 
+func send(out chan<- int) {
+	out <- 89
+	fmt.Println("写入",out)
+	close(out)
+}
+
+func send1(out chan<- int){
+	out <- 90
+	close(out)
+}
+func recv1(in <-chan  int) {
+	n := <-in
+	fmt.Println(n)
+}
+func recv(in <-chan int) {
+	n := <-in
+	fmt.Println("读到", n)
+}
+
 func main() {
-
-	c := make(chan int)
-
-	var wg sync.WaitGroup
-	wg.Add(2)
-
+	ch := make(chan int)
+	cn := make(chan int)
 	go func() {
-		for i := 0; i < 10; i++ {
-			c <- i
-		}
-		wg.Done()
+		send(ch)
 	}()
-
 	go func() {
-		for i := 0; i < 10; i++ {
-			c <- i
-		}
-		wg.Done()
+		send(cn)
 	}()
-
-	go func() {
-		wg.Wait()
-		close(c)
-	}()
-
-	for n := range c {
-		fmt.Println(n)
-	}
+	recv(ch)
+	recv(cn)
 }

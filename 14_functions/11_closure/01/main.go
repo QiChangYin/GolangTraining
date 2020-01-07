@@ -10,5 +10,11 @@ func main() {
 		y := "The credit belongs with the one who is in the ring."
 		fmt.Println(y)
 	}
-	// fmt.Println(y) // outside scope of y
+	y := 566
+	fmt.Sprint(y)
+	{
+		fmt.Sprint(y)
+		h := "asdsadasf"
+		fmt.Sprint(h)
+	}
 }

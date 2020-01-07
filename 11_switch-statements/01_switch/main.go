@@ -3,6 +3,17 @@ package main
 import "fmt"
 
 func main() {
+	switch "cao" {
+	case "cao":
+	   	fmt.Println("cao")
+	case "AAA":
+		fmt.Println("AAA")
+	case "BBB":
+		fmt.Println("BBB")
+	default:
+		fmt.Println("asddasfasd")
+	}
+
 	switch "Mhi" {
 	case "Daniel":
 		fmt.Println("Wassup Daniel")

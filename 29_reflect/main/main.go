@@ -2,23 +2,19 @@ package main
 
 import "fmt"
 
-type Order struct{
-	orderId int
-	customer int
-	callback func()
-}
+func main() {
+	println("start main")
+	ch := make(chan int, 1)
+	go func() {
+		for i := 0; i < 10; i++ {
+			ch <- i
+		}
+		// 如果不关闭channel,会引发panic
+		close(ch)
+	}()
 
-func main(){
-	var i interface{}
-	i = Order{
-		orderId:  0,
-		customer: 0,
-		callback: nil,
+	for v := range ch {
+		fmt.Println(v)
 	}
-	value, ok := i.(Order)
-	if !ok {
-		fmt.Println("-----------")
-	    return
-	}
-	fmt.Println("asdsadsa",value)
+	println("end main")
 }

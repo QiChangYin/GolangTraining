@@ -7,7 +7,12 @@ func main() {
 	for n := range puller(c) {
 		fmt.Println(n)
 	}
+	d := incrementor()
+	for  l := range puller(d) {
+		fmt.Println(l)
+	}
 }
+
 
 func incrementor() <-chan int {
 	out := make(chan int)
@@ -18,6 +23,15 @@ func incrementor() <-chan int {
 		close(out)
 	}()
 	return out
+}
+
+func new() <-chan int {
+	out := make(chan int)
+	go func() {
+		for j := 0 ; j < 100 ; j++ {
+			out <- j
+		}
+	}()
 }
 
 func puller(c <-chan int) <-chan int {

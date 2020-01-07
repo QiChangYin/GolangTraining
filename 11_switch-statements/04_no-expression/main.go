@@ -5,7 +5,6 @@ import "fmt"
 func main() {
 
 	myFriendsName := "Mar"
-
 	switch {
 	case len(myFriendsName) == 2:
 		fmt.Println("Wassup my friend with name of length 2")

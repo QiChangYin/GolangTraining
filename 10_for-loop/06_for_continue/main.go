@@ -14,4 +14,17 @@ func main() {
 			break
 		}
 	}
+
+	j := 1
+	for {
+		j++
+		if j % 2 == 0 {
+			fmt.Println(j)
+			continue
+		}
+		fmt.Println(j)
+		if j >= 100 {
+			break
+		}
+	}
 }

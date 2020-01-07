@@ -7,6 +7,9 @@ func main() {
 	var myGreeting map[string]string
 	fmt.Println(myGreeting)
 	fmt.Println(myGreeting == nil)
+	var  n map[string]string
+	fmt.Println(n)
+	fmt.Println(n==nil)
 }
 
 // add these lines:

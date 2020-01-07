@@ -14,6 +14,7 @@ func main() {
 	student1[3] = "74.00"
 	// store the record
 	records = append(records, student1)
+
 	// student 2
 	student2 := make([]string, 4)
 	student2[0] = "Gomez"

@@ -1,5 +1,4 @@
 package main
-
 import "fmt"
 
 //  switch on types
@@ -11,6 +10,10 @@ type contact struct {
 	name     string
 }
 
+type contact1 struct {
+	ca string
+	ne string
+}
 // SwitchOnType works with interfaces
 // we'll learn more about interfaces later
 func SwitchOnType(x interface{}) {
@@ -27,6 +30,18 @@ func SwitchOnType(x interface{}) {
 	}
 }
 
+func nice(x interface{}){
+	switch x.(type) {
+	case int:
+		fmt.Println("int")
+	case string:
+		fmt.Println("string")
+	case contact:
+		fmt.Println("contact")
+	default:
+		fmt.Println("sdaadsfsad")
+	}
+}
 func main() {
 	SwitchOnType(7)
 	SwitchOnType("McLeod")

@@ -10,4 +10,6 @@ func main() {
 	mySlice = append(mySlice, myOtherSlice...)
 
 	fmt.Println(mySlice)
+
+
 }

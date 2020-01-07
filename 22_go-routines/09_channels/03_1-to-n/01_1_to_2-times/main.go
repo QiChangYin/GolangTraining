@@ -30,7 +30,7 @@ func main() {
 		done <- true
 	}()
 
-	<-done
-	<-done
+	fmt.Println(<-done)
+	fmt.Println(<-done)
 
 }

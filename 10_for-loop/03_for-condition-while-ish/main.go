@@ -8,4 +8,10 @@ func main() {
 		fmt.Println(i)
 		i++
 	}
+
+	j := 1
+	for j < 1000 {
+		fmt.Println(j)
+		j++
+	}
 }

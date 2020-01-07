@@ -13,6 +13,9 @@ func init() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
 }
 
+func init() {
+	runtime.GOMAXPROCS(runtime.NumCPU())
+}
 func main() {
 	wg.Add(2)
 	go foo()

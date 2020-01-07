@@ -6,6 +6,7 @@ func main() {
 
 	mySlice := make([]int, 0, 3)
 
+
 	fmt.Println("-----------------")
 	fmt.Println(mySlice)
 	fmt.Println(len(mySlice))

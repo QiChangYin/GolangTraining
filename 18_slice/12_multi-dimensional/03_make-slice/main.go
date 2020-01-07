@@ -10,4 +10,6 @@ func main() {
 	fmt.Println(student)
 	fmt.Println(students)
 	fmt.Println(student == nil)
+
+
 }

@@ -4,6 +4,7 @@ import "fmt"
 
 func main() {
 	var x [256]byte
+	var y [121]byte
 
 	fmt.Println(len(x))
 	fmt.Println(x[42])

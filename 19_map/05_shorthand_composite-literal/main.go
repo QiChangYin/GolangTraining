@@ -10,4 +10,9 @@ func main() {
 	}
 
 	fmt.Println(myGreeting["Jenny"])
+	myGreeting1 := map[string]string{
+		"Timw": "12121",
+		"asadas":"saddsaads",
+    }
+    fmt.Println(myGreeting1["Timw"])
 }

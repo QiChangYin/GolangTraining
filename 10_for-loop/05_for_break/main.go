@@ -11,4 +11,12 @@ func main() {
 		}
 		i++
 	}
+	k := 1
+	for {
+		fmt.Println(k)
+		if k >= 100 {
+			break
+		}
+		k++
+	}
 }

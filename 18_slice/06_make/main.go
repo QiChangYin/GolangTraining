@@ -5,6 +5,10 @@ import "fmt"
 func main() {
 
 	customerNumber := make([]int, 3)
+	custmoerNumber1 := maake([]int, 3)
+	custmoerNumber1[0] = 1
+	custmoerNumber1[2] = 1
+	custmoerNumber1[3] = 2
 	// 3 is length & capacity
 	// // length - number of elements referred to by the slice
 	// // capacity - number of elements in the underlying array
@@ -17,6 +21,8 @@ func main() {
 	fmt.Println(customerNumber[2])
 
 	greeting := make([]string, 3, 5)
+	g := make([]string,3,4)
+
 	// 3 is length - number of elements referred to by the slice
 	// 5 is capacity - number of elements in the underlying array
 	// you could also do it like this

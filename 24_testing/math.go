@@ -6,4 +6,5 @@ func Adder(xs ...int) int {
 		res += v
 	}
 	return res
+
 }

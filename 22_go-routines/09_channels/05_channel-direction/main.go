@@ -10,6 +10,7 @@ func main() {
 	}
 }
 
+
 func incrementor() <-chan int {
 	out := make(chan int)
 	go func() {

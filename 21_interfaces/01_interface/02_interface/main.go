@@ -1,26 +1,31 @@
 package main
 
-import "fmt"
-
-type square struct {
-	side float64
+type People interface {
+	ReturnName() string
 }
 
-func (z square) area() float64 {
-	return z.side * z.side
+type Student struct {
+	Name string
 }
 
-type shape interface {
-	area() float64
+type Teacher struct {
+	Name string
 }
 
-func info(z shape) {
-	fmt.Println(z)
-	fmt.Println(z.area())
+
+func (s Student) ReturnName() string{
+	return s.Name
+}
+func (t *Teacher) ReturnName() string{
+	return t.Name
 }
 
-func main() {
-	s := square{10}
-	fmt.Printf("%T\n",s)
-	info(s)
+func main(){
+	cbs := Student{Name:"学生的咖啡色"}
+	cbt := Teacher{Name:"老师的咖啡色"}
+	var a People
+	a = cbs
+	println(a.ReturnName())
+	a = &cbt
+	println(a.ReturnName())
 }

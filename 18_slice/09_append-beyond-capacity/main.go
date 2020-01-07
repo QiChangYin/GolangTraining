@@ -19,4 +19,14 @@ func main() {
 	fmt.Println(greeting[6])
 	fmt.Println(len(greeting))
 	fmt.Println(cap(greeting))
+
+	greetingNice := make([]string, 3,100)
+	greetingNice[0] = "12"
+	greetingNice[1] = "2"
+	greetingNice[2] = "44"
+	greetingNice = append(greetingNice,"1121212112")
+	fmt.Println(greetingNice[2])
+	fmt.Println(len(greetingNice))
+	fmt.Println(cap(greetingNice))
+
 }

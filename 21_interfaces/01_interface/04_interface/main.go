@@ -1,48 +1,21 @@
 package main
-
-import (
-	"fmt"
-	"math"
-)
-
-type circle struct {
-	radius float64
-}
-
-type square struct {
-	side float64
-}
-
-type shape interface {
-	area() float64
-}
-
-func (c circle) area() float64 {
-	return math.Pi * c.radius * c.radius
-}
-
-func (s square) area() float64 {
-	return s.side * s.side
-}
-
-func info(z shape) {
-	fmt.Println(z)
-	fmt.Println(z.area())
-}
-
-// a new method which takes the INTERFACE TYPE shape
-func totalArea(shapes ...shape) float64 {
-	var area float64
-	for _, s := range shapes {
-		area += s.area()
+import "fmt"
+import "time"
+func A(c chan int){
+	for i:=0;i<10;i++{
+		c<- i
 	}
-	return area
 }
-
-func main() {
-	s := square{10}
-	c := circle{5}
-	info(s)
-	info(c)
-	fmt.Println("Total Area: ", totalArea(c, s))
+func B(c chan int){
+	for val:=range c {
+		fmt.Println("Value:",val)
+	}
+}
+func main(){
+	chs:=make(chan int,10)
+	//只要有通道操作一定要放到goroutine中否则 会堵塞当前的主线程 并且导致程序退出
+	//对于同步通道 或者带缓冲的通道 一定要封装成函数 使用 goroutine 包装
+	go A(chs)
+	go B(chs)
+	time.Sleep(1e9)
 }

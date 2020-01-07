@@ -18,4 +18,14 @@ func main() {
 			fmt.Println("Even")
 		}
 	}
+
+	y := 14 % 23
+	if y == 1 {
+		fmt.Println("AAA")
+	} else {
+		fmt.Println("BBB")
+	}
+	for  i := 1 ; i < 700 ; i++{
+		fmt.Println("sasadsafsad")
+	}
 }

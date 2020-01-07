@@ -14,4 +14,7 @@ func main() {
 	for key, val := range myGreeting {
 		fmt.Println(key, " - ", val)
 	}
+	for key, value := range myGreeting {
+		fmt.Println(key, "-------------", value)
+	}
 }

@@ -11,3 +11,4 @@ func main() {
 	zero(x)
 	fmt.Println(x) // x is still 5
 }
+
